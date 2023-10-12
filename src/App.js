@@ -14,6 +14,7 @@ function App() {
       <OtherContent className="content-parent"/>
       <footer className="App-footer">
         footer
+        <p>puwigedukjnk3</p>wed
       </footer>
     </div>
   );
