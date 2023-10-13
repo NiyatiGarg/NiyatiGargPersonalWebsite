@@ -1,6 +1,6 @@
 const DeveloperProfile=()=>{
     return(
-        <div>
+        <div style={{ color: 'white' }}>
             <h2> As A Developer</h2>
             <p>
                 I find immense satisfaction in crafting visually appealiung user interfaces. <br/>

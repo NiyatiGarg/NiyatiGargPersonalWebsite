@@ -1,6 +1,6 @@
 const About=()=>{
     return (
-        <div>
+        <div style={{ color: 'white' }}>
             <h2> About Me</h2>
             <p>Hello, I'm a passionate front end developer.
                 I'm thrilled to welcome you to my corner of the internet. <br/>
