@@ -6,8 +6,8 @@ import DeveloperProfile from './components/DeveloperProfile';
 function App() {
   return (
     <div className="App">
-      <About/>
-      <DeveloperProfile/>
+      {/* <About/> */}
+      <DeveloperProfile />
     </div>
   );
 }
