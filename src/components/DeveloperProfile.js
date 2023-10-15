@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './DeveloperProfile.css';
-import { FaLongArrowAltLeft } from 'react-icons/fa'
-import { BsDashLg } from 'react-icons/bs'
+import { FaLongArrowAltLeft } from 'react-icons/fa';
+import { BsDashLg } from 'react-icons/bs';
+import { FiArrowUpLeft, FiArrowDownRight } from 'react-icons/fi';
 
 
 const DeveloperProfile = () => {
@@ -103,8 +104,11 @@ const DeveloperProfile = () => {
         }
     ];
 
-    const toggleDetails = () => {
+    const toggleDetailsForward = () => {
         setCurrentIndex((currentIndex + 1) % details.length);
+    };
+    const toggleDetailsBackward = () => {
+        setCurrentIndex(((currentIndex - 1) + details.length) % details.length);
     };
 
     return (
@@ -115,11 +119,12 @@ const DeveloperProfile = () => {
                 {showFullPara ?
                     <div onClick={() => setFullParaTongle(false)}><FaLongArrowAltLeft className="bold-icon" /></div>
                     : <>
-                        <FaLongArrowAltLeft onClick={toggleDetails} />
+                        <FiArrowUpLeft onClick={toggleDetailsForward} />
                         <h3> <BsDashLg /> {details[currentIndex].subheading}</h3>
                     </>}
                 <h2> {details[currentIndex].title}</h2>
                 <p>{details[currentIndex].description}</p>
+                <FiArrowDownRight onClick={toggleDetailsBackward} />
             </div>
 
         </>
