@@ -45,6 +45,9 @@ const DeveloperProfile = () => {
                         exciting journey with me. Your presence here is genuinely appreciated, and I'm looking forward
                         to all the wonderful experiences we can share together in this ever-evolving digital universe.
                     </p>
+                    <div className="caption">
+                        <BsDashLg /> About Me
+                    </div>
                 </>
             ) : (
                 <>
@@ -112,22 +115,19 @@ const DeveloperProfile = () => {
     };
 
     return (
-        <>
-
-            <div className={`parent ${showFullPara ? "column-layout" : ""}`}>
-
+        <div className={showFullPara ? "column-layout-parent" : "parent"}>
+            <div className='arrow-top' >{!showFullPara && <FiArrowUpLeft onClick={toggleDetailsForward} />}</div>
+            <div className={`sub-parent ${showFullPara ? "column-layout" : ""}`}>
                 {showFullPara ?
                     <div onClick={() => setFullParaTongle(false)}><FaLongArrowAltLeft className="bold-icon" /></div>
                     : <>
-                        <FiArrowUpLeft onClick={toggleDetailsForward} />
                         <h3> <BsDashLg /> {details[currentIndex].subheading}</h3>
                     </>}
                 <h2> {details[currentIndex].title}</h2>
                 <p>{details[currentIndex].description}</p>
-                <FiArrowDownRight onClick={toggleDetailsBackward} />
             </div>
-
-        </>
+            <div className='arrow-bottom'>{!showFullPara && <FiArrowDownRight onClick={toggleDetailsBackward} />}</div>
+        </div>
     )
 }
 export default DeveloperProfile;
