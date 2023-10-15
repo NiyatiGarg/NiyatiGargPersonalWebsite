@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import DeveloperProfile from './components/DeveloperProfile';
 
 function App() {
