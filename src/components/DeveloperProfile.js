@@ -117,7 +117,7 @@ const DeveloperProfile = () => {
     return (
         <div className={showFullPara ? "column-layout-parent" : "parent"}>
             <div className='arrow-top' >{!showFullPara && <FiArrowUpLeft onClick={toggleDetailsForward} />}</div>
-            <div className={`sub-parent ${showFullPara ? "column-layout" : ""}`}>
+            <div className={`sub-parent ${showFullPara ? "column-layout-subparent" : ""}`}>
                 {showFullPara ?
                     <div onClick={() => setFullParaTongle(false)}><FaLongArrowAltLeft className="bold-icon" /></div>
                     : <>

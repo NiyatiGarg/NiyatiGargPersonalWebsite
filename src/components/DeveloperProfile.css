@@ -7,10 +7,96 @@
     display: flex;
 }
 
+/* or */
+
 .column-layout-parent {
-    justify-content: center;
+    color: rgba(254, 252, 252, 0.946);
+    min-height: 100vh;
+    min-width: 100vw;
+    justify-content: right;
+    align-items: center;
+    display: flex;
 }
 
+/* _______________________________________________________________________ */
+.sub-parent {
+    color: rgba(254, 252, 252, 0.946);
+    /* background-color: black; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    text-align: left;
+}
+
+/* or */
+.column-layout-subparent {
+    width: 60vw;
+}
+
+/* ________________________________________________________________________________ */
+
+.column-layout-subparent h2 {
+    font-size: 7vw;
+}
+
+/* or */
+h2 {
+    margin: 0;
+    padding: 0;
+
+    font-size: 3.5vw;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ___________________________________________________________________________________ */
+
+h3 {
+    font-size: 2vw;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* or  */
+.column-layout-subparent .caption {
+
+    font-size: 1.7vw;
+    color: white;
+    font-family: Futura, "futura-pt", sans-serif;
+    font-weight: 20;
+    text-decoration: solid;
+    text-align: right;
+    padding: 50px 50px 0 0;
+}
+
+/* ________________________________________________________________________________ */
+p {
+    text-align: left;
+    font-size: 14px;
+    font-family: Futura, "futura-pt", sans-serif;
+    letter-spacing: 1px;
+    color: rgb(205, 205, 205);
+
+}
+
+/* or */
+.full-paragraph-layout {
+    flex-direction: column;
+    column-count: 2;
+    width: 50vw;
+    text-align: justify;
+    gap: 30px;
+}
+
+/* ______________________________________________________________________________________ */
+
+.bold-icon {
+    font-size: 2vw;
+    padding-bottom: 40px;
+    display: flex;
+}
 
 .arrow-top {
     display: flex;
@@ -27,73 +113,4 @@
     right: 30px;
     font-size: 40px;
     position: fixed;
-}
-
-.sub-parent {
-    color: rgba(254, 252, 252, 0.946);
-    background-color: black;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30vw;
-    /* height: 50vh; */
-    text-align: left;
-}
-
-
-.column-layout {
-    width: 750px;
-}
-
-.column-layout h2 {
-    font-size: 7vw;
-}
-
-.bold-icon {
-    font-size: 2vw;
-    padding-bottom: 40px;
-    display: flex;
-}
-
-.column-layout .caption {
-
-    font-size: 1.7vw;
-    color: white;
-    font-family: Futura, "futura-pt", sans-serif;
-    font-weight: 20;
-    text-decoration: solid;
-    text-align: right;
-}
-
-.full-paragraph-layout {
-    flex-direction: column;
-    column-count: 2;
-    width: 50vw;
-    text-align: justify;
-    gap: 30px;
-}
-
-h3 {
-    font-size: 2vw;
-    text-align: left;
-    letter-spacing: 1px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-h2 {
-    margin: 0;
-    padding: 0;
-
-    font-size: 3.5vw;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-p {
-    text-align: left;
-    font-size: 14px;
-    font-family: Futura, "futura-pt", sans-serif;
-    letter-spacing: 1px;
-    color: rgb(205, 205, 205);
-
 }
