@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import './DeveloperProfile.css';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { BsDashLg } from 'react-icons/bs';
 import { FiArrowUpLeft, FiArrowDownRight } from 'react-icons/fi';
+import { BsLinkedin, BsGithub, BsQuora, BsYoutube, BsInstagram } from 'react-icons/bs';
+import { FaBlogger } from 'react-icons/fa';
+
+import image from '../assets/About.jpeg';
+import './DeveloperProfile.css';
+
 
 
 const DeveloperProfile = () => {
@@ -14,6 +19,7 @@ const DeveloperProfile = () => {
         {
             subheading: 'About Me',
             title: 'Niyati Garg',
+            image: <img src={image} alt="My Image" />,
             description: (<>{showFullPara ? (
                 <>
                     <p className="full-paragraph-layout">
@@ -46,12 +52,12 @@ const DeveloperProfile = () => {
                         to all the wonderful experiences we can share together in this ever-evolving digital universe.
                     </p>
                     <div className="caption">
-                        <BsDashLg /> About Me
+                        <BsDashLg /> ABOUT ME
                     </div>
                 </>
             ) : (
                 <>
-                    <p>
+                    <p onClick={() => setFullParaTongle(true)}>
                         Hello, I'm delighted to introduce myself as a passionate front-end developer
                         and I extend a warm welcome to you in visiting my digital sanctuary on the web.<br /><br />
                         As of the present, I am pursuing a Master's degree in Computer Applications from
@@ -60,7 +66,7 @@ const DeveloperProfile = () => {
                         not only in the professional arena but also in my personal life. For me, it's not just
                         about writing code; it's about crafting a harmonious and fulfilling lifestyle..
                     </p>
-                    <div onClick={() => setFullParaTongle(true)}>
+                    <div onClick={() => setFullParaTongle(true)} className='link'>
                         Learn More
                     </div>
                 </>
@@ -70,8 +76,10 @@ const DeveloperProfile = () => {
         {
             subheading: 'Profession',
             title: 'As A Developer',
+            image: <img src={image} alt="My Image" />,
             description: (<>{showFullPara ? (
                 <>
+
                     <p className="full-paragraph-layout">
                         I find immense satisfaction in crafting visually appealing user interfaces. <br />
                         My expertise spans a range of technologies including HTML, CSS, JavaScript, React.js, and Redux.
@@ -91,14 +99,14 @@ const DeveloperProfile = () => {
                 </>
             ) : (
                 <>
-                    <p>
+                    <p onClick={() => setFullParaTongle(true)}>
                         I find immense satisfaction in crafting visually appealing user interfaces.My expertise
                         spans a range of technologies including HTML, CSS, JavaScript, React.js, and Redux.
                         I've honed my abilities through hands-on experiences and internships.<br />
                         Crafting user-friendly digital experiences, building reusable components, and
                         collaborating with talented teams have been my avenues of growth.
                     </p>
-                    <div onClick={() => setFullParaTongle(true)}>
+                    <div onClick={() => setFullParaTongle(true)} className='link'>
                         Learn More
                     </div>
                 </>
@@ -106,44 +114,96 @@ const DeveloperProfile = () => {
             </>)
         },
         {
-            subheading: 'Profession',
-            title: 'As A Developer',
+            subheading: 'Lets Manifest',
+            title: 'Priorities',
+            image: <img src={image} alt="My Image" />,
             description: (<>{showFullPara ? (
                 <>
                     <p className="full-paragraph-layout">
-                        I find immense satisfaction in crafting visually appealing user interfaces. <br />
-                        My expertise spans a range of technologies including HTML, CSS, JavaScript, React.js, and Redux.
-                        I've honed my abilities through hands-on experiences and internships.<br />
-                        Crafting user-friendly digital experiences, building reusable components, and collaborating
-                        with talented teams have been my avenues of growth.<br />
+                        I'm passionate about all of my interests, but I have a special place in my heart for yoga.
+                        Yoga has helped me to improve my physical and mental health, and it has also taught me the
+                        importance of balance and mindfulness. I'm grateful for the opportunity to share my love of yoga
+                        with others through my teaching and practice.<br /><br />
+                        In addition to yoga, I also enjoy dancing, drawing, playing guitar, painting, applying mehandi,
+                        crafting, and riding my bike. I love all of these activities because they allow me to express
+                        myself creatively and stay physically active. I also find that learning new things is a great way
+                        to keep my mind sharp and challenged.<br /><br />
+                        My strong belief in the supreme power and in manifesting things gives me a sense of purpose and
+                        direction in life. I believe that we all have the power to create our own reality, and I strive to
+                        use my thoughts, words, and actions to create a positive and meaningful life for myself and others.<br />
 
-                        In addition to my technical skills, I'm proficient in modern development tools such as Git and
-                        well-versed in popular Integrated Development Environments (IDEs) like Visual Studio Code and WebStorm.<br />
-                        This efficiency allows me to maximize my productivity, ensuring top-notch results.
+                        I'm excited to connect with other people who share my interests and values. If you have any questions
+                        or want to chat, please feel free to reach out to me!
                     </p>
 
                     <div className="caption">
-                        <BsDashLg /> "CAPABLE MINDS OFTEN REMAIN UNSEEN TREASURES, <br />
-                        WAITING FOR THE CHANCE TO SHINE"
+                        <BsDashLg /> "NEVER STOP PRIORITISING YOUR HEALTH"
                     </div>
                 </>
             ) : (
                 <>
-                    <img src='../assets/image.png' alt="" />
-                    <p>
-                        I find immense satisfaction in crafting visually appealing user interfaces.My expertise
-                        spans a range of technologies including HTML, CSS, JavaScript, React.js, and Redux.
-                        I've honed my abilities through hands-on experiences and internships.<br />
-                        Crafting user-friendly digital experiences, building reusable components, and
-                        collaborating with talented teams have been my avenues of growth.
+                    <p onClick={() => setFullParaTongle(true)}>
+                        I'm passionate about all of my interests, but I have a special place in my heart for yoga.
+                        Yoga has helped me to improve my physical and mental health, and it has also taught me the
+                        importance of balance and mindfulness.<br />
+                        In addition to yoga, I also enjoy dancing, drawing, playing guitar, painting, applying mehandi,
+                        crafting, and riding my bike.<br />
+                        My strong belief in the supreme power and in manifesting things gives me a sense of purpose and
+                        direction in life.
                     </p>
-                    <div onClick={() => setFullParaTongle(true)}>
+                    <div onClick={() => setFullParaTongle(true)} className='link'>
                         Learn More
                     </div>
                 </>
             )}
             </>)
-        }
+        },
+        {
+            subheading: 'Get In Touch',
+            title: 'Coffee ?',
+            image: <img src={image} alt="My Image" />,
+            description: (<>{showFullPara ? (
+                <>
+                    <p className="full-paragraph-layout">
+                        <a href="https://www.linkedin.com/in/niyati-garg-59b385211" className="link">
+                            <BsLinkedin style={{ fontSize: 30, paddingBottom: 10, color: '#0077b5' }} />
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/NiyatiGarg" className="link">
+                            <BsGithub style={{ fontSize: 30, paddingBottom: 10, color: '#333333' }} />
+                            GitHub
+                        </a>
+                        <a href="https://www.quora.com/profile/Niyati-Garg-9" className="link">
+                            <BsQuora style={{ fontSize: 30, paddingBottom: 10, color: '#993333' }} />
+                            Quora
+                        </a>
+                        <a href="https://evergreen-blogs.blogspot.com/" className="link">
+                            <FaBlogger style={{ fontSize: 30, paddingBottom: 10, color: '#ff5500' }} />
+                            Blogger.com
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCDhgQNmm97ZVSyyBFi1GMig" className="link">
+                            <BsYoutube style={{ fontSize: 30, paddingBottom: 10, color: '#ff0000' }} />
+                            YouTube
+                        </a>
+                        <a href="https://www.instagram.com/_niyatigarg01_/" className="link">
+                            <BsInstagram style={{ fontSize: 30, paddingBottom: 10, color: '#e1306c' }} />
+                            Instagram
+                        </a>
+                    </p>
+
+                    <div className="caption">
+                        <BsDashLg /> "CONTACT"
+                    </div>
+                </>
+            ) : (
+                <>
+                    <p onClick={() => setFullParaTongle(true)} className='link'>
+                        Let's connect and build great things together
+                    </p>
+                </>
+            )}
+            </>)
+        },
     ];
 
     const toggleDetailsForward = () => {

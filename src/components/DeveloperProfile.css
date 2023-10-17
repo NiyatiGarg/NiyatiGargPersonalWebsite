@@ -26,6 +26,7 @@
     justify-content: center;
     align-items: center;
     width: 30vw;
+    margin-bottom: 40px;
     text-align: left;
     transition: transform 0.5s ease-in-out;
 }
@@ -33,7 +34,6 @@
 .sub-parent:hover {
     transform: translateY(-20px) translateX(20px);
 }
-
 
 /* or */
 .column-layout-subparent {
@@ -51,7 +51,6 @@
 h2 {
     margin: 0;
     padding: 0;
-
     font-size: 3.5vw;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -120,4 +119,14 @@ p {
     right: 30px;
     font-size: 40px;
     position: fixed;
+}
+
+.link {
+    color: rgb(120, 158, 162);
+    flex-direction: column;
+    display: flex;
+    padding: 30px;
+    font-size: 13px;
+    text-decoration: none;
+
 }
