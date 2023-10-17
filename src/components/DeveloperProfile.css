@@ -122,11 +122,11 @@ p {
 }
 
 .link {
-    color: rgb(120, 158, 162);
+    color: #1AB3DE;
     flex-direction: column;
     display: flex;
-    padding: 30px;
+    padding: 30px 30px 30px 0;
     font-size: 13px;
+    padding-top: 0;
     text-decoration: none;
-
 }

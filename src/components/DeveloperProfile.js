@@ -59,23 +59,22 @@ const DeveloperProfile = () => {
                 <>
                     <p onClick={() => setFullParaTongle(true)}>
                         Hello, I'm delighted to introduce myself as a passionate front-end developer
-                        and I extend a warm welcome to you in visiting my digital sanctuary on the web.<br /><br />
-                        As of the present, I am pursuing a Master's degree in Computer Applications from
-                        Amity University Online. However, My mission extends beyond the mere pursuit of
+                        and I extend a warm welcome to you in visiting my digital sanctuary on the web.<br />
+                        Currently, I am pursuing a Master's degree in Computer Applications. However, My mission extends beyond the mere pursuit of
                         employment; it now encompasses a burning desire to expand my knowledge and skill set,
                         not only in the professional arena but also in my personal life. For me, it's not just
-                        about writing code; it's about crafting a harmonious and fulfilling lifestyle..
+                        about writing code; it's about crafting a harmonious and fulfilling lifestyle...
+                        <a onClick={() => setFullParaTongle(true)} className='link'>
+                            Learn More
+                        </a>
                     </p>
-                    <div onClick={() => setFullParaTongle(true)} className='link'>
-                        Learn More
-                    </div>
                 </>
             )}
             </>),
         },
         {
             subheading: 'Profession',
-            title: 'As A Developer',
+            title: showFullPara ? 'A Developer' : 'As A Developer',
             image: <img src={image} alt="My Image" />,
             description: (<>{showFullPara ? (
                 <>
@@ -104,11 +103,11 @@ const DeveloperProfile = () => {
                         spans a range of technologies including HTML, CSS, JavaScript, React.js, and Redux.
                         I've honed my abilities through hands-on experiences and internships.<br />
                         Crafting user-friendly digital experiences, building reusable components, and
-                        collaborating with talented teams have been my avenues of growth.
+                        collaborating with talented teams have been my avenues of growth...
+                        <a onClick={() => setFullParaTongle(true)} className='link'>
+                            Learn More
+                        </a>
                     </p>
-                    <div onClick={() => setFullParaTongle(true)} className='link'>
-                        Learn More
-                    </div>
                 </>
             )}
             </>)
@@ -149,24 +148,24 @@ const DeveloperProfile = () => {
                         In addition to yoga, I also enjoy dancing, drawing, playing guitar, painting, applying mehandi,
                         crafting, and riding my bike.<br />
                         My strong belief in the supreme power and in manifesting things gives me a sense of purpose and
-                        direction in life.
+                        direction in life...
+                        <a onClick={() => setFullParaTongle(true)} className='link'>
+                            Learn More
+                        </a>
                     </p>
-                    <div onClick={() => setFullParaTongle(true)} className='link'>
-                        Learn More
-                    </div>
                 </>
             )}
             </>)
         },
         {
             subheading: 'Get In Touch',
-            title: 'Coffee ?',
+            title: showFullPara ? 'Get In Touch' : 'Coffee ?',
             image: <img src={image} alt="My Image" />,
             description: (<>{showFullPara ? (
                 <>
                     <p className="full-paragraph-layout">
                         <a href="https://www.linkedin.com/in/niyati-garg-59b385211" className="link">
-                            <BsLinkedin style={{ fontSize: 30, paddingBottom: 10, color: '#0077b5' }} />
+                            <BsLinkedin style={{ fontSize: 30, paddingBottom: 10, color: '#white' }} />
                             LinkedIn
                         </a>
                         <a href="https://github.com/NiyatiGarg" className="link">
@@ -207,10 +206,10 @@ const DeveloperProfile = () => {
     ];
 
     const toggleDetailsForward = () => {
-        setCurrentIndex((currentIndex + 1) % details.length);
+        setCurrentIndex(((currentIndex - 1) + details.length) % details.length);
     };
     const toggleDetailsBackward = () => {
-        setCurrentIndex(((currentIndex - 1) + details.length) % details.length);
+        setCurrentIndex((currentIndex + 1) % details.length);
     };
 
     return (
