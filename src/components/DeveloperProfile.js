@@ -104,6 +104,45 @@ const DeveloperProfile = () => {
                 </>
             )}
             </>)
+        },
+        {
+            subheading: 'Profession',
+            title: 'As A Developer',
+            description: (<>{showFullPara ? (
+                <>
+                    <p className="full-paragraph-layout">
+                        I find immense satisfaction in crafting visually appealing user interfaces. <br />
+                        My expertise spans a range of technologies including HTML, CSS, JavaScript, React.js, and Redux.
+                        I've honed my abilities through hands-on experiences and internships.<br />
+                        Crafting user-friendly digital experiences, building reusable components, and collaborating
+                        with talented teams have been my avenues of growth.<br />
+
+                        In addition to my technical skills, I'm proficient in modern development tools such as Git and
+                        well-versed in popular Integrated Development Environments (IDEs) like Visual Studio Code and WebStorm.<br />
+                        This efficiency allows me to maximize my productivity, ensuring top-notch results.
+                    </p>
+
+                    <div className="caption">
+                        <BsDashLg /> "CAPABLE MINDS OFTEN REMAIN UNSEEN TREASURES, <br />
+                        WAITING FOR THE CHANCE TO SHINE"
+                    </div>
+                </>
+            ) : (
+                <>
+                    <img src='../assets/image.png' alt="" />
+                    <p>
+                        I find immense satisfaction in crafting visually appealing user interfaces.My expertise
+                        spans a range of technologies including HTML, CSS, JavaScript, React.js, and Redux.
+                        I've honed my abilities through hands-on experiences and internships.<br />
+                        Crafting user-friendly digital experiences, building reusable components, and
+                        collaborating with talented teams have been my avenues of growth.
+                    </p>
+                    <div onClick={() => setFullParaTongle(true)}>
+                        Learn More
+                    </div>
+                </>
+            )}
+            </>)
         }
     ];
 
@@ -117,7 +156,7 @@ const DeveloperProfile = () => {
     return (
         <div className={showFullPara ? "column-layout-parent" : "parent"}>
             <div className='arrow-top' >{!showFullPara && <FiArrowUpLeft onClick={toggleDetailsForward} />}</div>
-            <div className={`sub-parent ${showFullPara ? "column-layout-subparent" : ""}`}>
+            <div className={showFullPara ? "column-layout-subparent" : "sub-parent"}>
                 {showFullPara ?
                     <div onClick={() => setFullParaTongle(false)}><FaLongArrowAltLeft className="bold-icon" /></div>
                     : <>
