@@ -5,8 +5,11 @@ import { FiArrowUpLeft, FiArrowDownRight } from 'react-icons/fi';
 import { BsLinkedin, BsGithub, BsQuora, BsYoutube, BsInstagram } from 'react-icons/bs';
 import { FaBlogger } from 'react-icons/fa';
 
-import image from '../assets/About.jpeg';
 import './DeveloperProfile.css';
+import aboutImage from '../assets/About.jpeg';
+import developerImage from '../assets/Developer.jpg';
+import interestsImage from '../assets/Interests.jpg';
+import connectImage from '../assets/Connect.jpg';
 
 
 
@@ -19,7 +22,7 @@ const DeveloperProfile = () => {
         {
             subheading: 'About Me',
             title: 'Niyati Garg',
-            image: <img src={image} alt="My Image" />,
+            image: <img className='image' src={aboutImage} alt="My Image" />,
             description: (<>{showFullPara ? (
                 <>
                     <p className="full-paragraph-layout">
@@ -75,7 +78,7 @@ const DeveloperProfile = () => {
         {
             subheading: 'Profession',
             title: showFullPara ? 'A Developer' : 'As A Developer',
-            image: <img src={image} alt="My Image" />,
+            image: <img className='image' src={developerImage} alt="image2" />,
             description: (<>{showFullPara ? (
                 <>
 
@@ -114,8 +117,8 @@ const DeveloperProfile = () => {
         },
         {
             subheading: 'Lets Manifest',
-            title: 'Priorities',
-            image: <img src={image} alt="My Image" />,
+            title: 'Interests',
+            image: <img className='image' src={interestsImage} alt="Image 3" />,
             description: (<>{showFullPara ? (
                 <>
                     <p className="full-paragraph-layout">
@@ -160,7 +163,7 @@ const DeveloperProfile = () => {
         {
             subheading: 'Get In Touch',
             title: showFullPara ? 'Get In Touch' : 'Coffee ?',
-            image: <img src={image} alt="My Image" />,
+            image: <img className='image' src={connectImage} alt="Image4" />,
             description: (<>{showFullPara ? (
                 <>
                     <p className="full-paragraph-layout">
@@ -206,26 +209,39 @@ const DeveloperProfile = () => {
     ];
 
     const toggleDetailsForward = () => {
-        setCurrentIndex(((currentIndex - 1) + details.length) % details.length);
+
+        setCurrentIndex((currentIndex + 1) % details.length);
     };
     const toggleDetailsBackward = () => {
-        setCurrentIndex((currentIndex + 1) % details.length);
+        setCurrentIndex(((currentIndex - 1) + details.length) % details.length);
     };
 
     return (
-        <div className={showFullPara ? "column-layout-parent" : "parent"}>
-            <div className='arrow-top' >{!showFullPara && <FiArrowUpLeft onClick={toggleDetailsForward} />}</div>
-            <div className={showFullPara ? "column-layout-subparent" : "sub-parent"}>
-                {showFullPara ?
-                    <div onClick={() => setFullParaTongle(false)}><FaLongArrowAltLeft className="bold-icon" /></div>
-                    : <>
-                        <h3> <BsDashLg /> {details[currentIndex].subheading}</h3>
-                    </>}
-                <h2> {details[currentIndex].title}</h2>
-                <p>{details[currentIndex].description}</p>
+        <>
+            {!showFullPara &&
+                <>
+                    <div className='unique-Image-left'>{details[(currentIndex + 1) % details.length].image}</div>
+                    <div className='unique-Image-right'>{details[((currentIndex - 1) + details.length) % details.length].image}</div>
+                </>}
+            <div className={showFullPara ? 'full-image' : 'image-parent-box'} >
+                {details[currentIndex].image}
             </div>
-            <div className='arrow-bottom'>{!showFullPara && <FiArrowDownRight onClick={toggleDetailsBackward} />}</div>
-        </div>
+            <div className={showFullPara ? "column-layout-parent" : "parent"}>
+
+                <div className='arrow-top' >{!showFullPara && <FiArrowUpLeft onClick={toggleDetailsForward} />}</div>
+
+                <div className={showFullPara ? "column-layout-subparent" : "sub-parent"}>
+                    {showFullPara ?
+                        <div onClick={() => setFullParaTongle(false)}><FaLongArrowAltLeft className="bold-icon" /></div>
+                        : <>
+                            <h3> <BsDashLg /> {details[currentIndex].subheading}</h3>
+                        </>}
+                    <h2> {details[currentIndex].title}</h2>
+                    <p>{details[currentIndex].description}</p>
+                </div>
+                <div className='arrow-bottom'>{!showFullPara && <FiArrowDownRight onClick={toggleDetailsBackward} />}</div>
+            </div>
+        </>
     )
 }
 export default DeveloperProfile;
