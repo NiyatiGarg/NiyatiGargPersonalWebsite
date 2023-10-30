@@ -5,15 +5,14 @@ import { FiArrowUpLeft, FiArrowDownRight } from 'react-icons/fi';
 import { BsLinkedin, BsGithub, BsQuora, BsYoutube, BsInstagram } from 'react-icons/bs';
 import { FaBlogger } from 'react-icons/fa';
 
-import './DeveloperProfile.css';
+import './Profiles.css';
 import aboutImage from '../assets/About.jpeg';
 import developerImage from '../assets/Developer.jpg';
 import interestsImage from '../assets/Interests.jpg';
 import connectImage from '../assets/Connect.jpg';
 
 
-
-const DeveloperProfile = () => {
+const Profiles = () => {
 
     const [showFullPara, setFullParaTongle] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -226,11 +225,11 @@ const DeveloperProfile = () => {
             <div className={showFullPara ? 'full-image' : 'image-parent-box'} >
                 {details[currentIndex].image}
             </div>
-            <div className={showFullPara ? "column-layout-parent" : "parent"}>
+            <div className={showFullPara ? "fullscreen-parent" : "parent"}>
 
                 <div className='arrow-top' >{!showFullPara && <FiArrowUpLeft onClick={toggleDetailsForward} />}</div>
 
-                <div className={showFullPara ? "column-layout-subparent" : "sub-parent"}>
+                <div className={showFullPara ? "fullscreen-subparent" : "sub-parent"}>
                     {showFullPara ?
                         <div onClick={() => setFullParaTongle(false)}><FaLongArrowAltLeft className="bold-icon" /></div>
                         : <>
@@ -244,4 +243,4 @@ const DeveloperProfile = () => {
         </>
     )
 }
-export default DeveloperProfile;
+export default Profiles;
